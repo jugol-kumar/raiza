@@ -336,8 +336,8 @@
                                         <div class="product-description-label">{{ translate('Refund')}}:</div>
                                     </div>
                                     <div class="col-10">
-                                        <a href="{{ route('returnpolicy') }}" target="_blank"> @if ($refund_sticker != null && $refund_sticker->value != null) <img src="{{ uploaded_asset($refund_sticker->value) }}" height="36"> @else <img src="{{ static_asset('frontend/images/refund-sticker.jpg') }}" height="36"> @endif</a>
-                                        <a href="{{ route('returnpolicy') }}" class="ml-2" target="_blank">View Policy</a>
+                                        <a href="{{ route('custom-pages.show_custom_page', 'returnpolicy') }}" target="_blank"> @if ($refund_sticker != null && $refund_sticker->value != null) <img src="{{ uploaded_asset($refund_sticker->value) }}" height="36"> @else <img src="{{ static_asset('frontend/images/refund-sticker.jpg') }}" height="36"> @endif</a>
+                                        <a href="{{ route('custom-pages.show_custom_page', 'returnpolicy') }}" class="ml-2" target="_blank">View Policy</a>
                                     </div>
                                 </div>
                             @endif

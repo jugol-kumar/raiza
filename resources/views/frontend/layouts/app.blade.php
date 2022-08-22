@@ -122,9 +122,21 @@
 </noscript>
 <!-- End Facebook Pixel Code -->
 @endif
-    <style type="text/css">
-        .bg-danger{
 
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #preeloader{
+            backdrop-filter: blur(10px);
+            width:100%;
+            height:100vh;
+            position:fixed;
+            z-index:10000;
+{{--            background:url({{ asset("frontend/images/load.gif") }}) no-repeat center center;--}}
+            background:url({{ asset("frontend/images/load.svg") }}) no-repeat center center;
         }
     </style>
 
@@ -132,6 +144,7 @@
 </head>
 <body id="app_body">
 
+<div style="background-color: inherit;" id="preeloader" class="d-flex align-items-center justify-content-center"></div>
 
 <!-- MAIN WRAPPER -->
 <div class="body-wrap shop-default shop-cards shop-tech gry-bg">
@@ -174,7 +187,13 @@
 
 <!-- SCRIPTS -->
 <!-- <a href="#" class="back-to-top btn-back-to-top"></a> -->
-
+<script>
+    var preeloader = document.getElementById("preeloader");
+    window.addEventListener('load', function(){
+        preeloader.style.display="none";
+        preeloader.remove();
+    });
+</script>
 <!-- Core -->
 <script src="{{ static_asset('frontend/js/vendor/popper.min.js') }}"></script>
 <script src="{{ static_asset('frontend/js/vendor/bootstrap.min.js') }}"></script>
