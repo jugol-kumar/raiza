@@ -365,8 +365,61 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        this is right sections
+
+
+
+                    <div class="col-lg-3 h-full bg_details_side p-3 delevery_address_secotion">
+                        <span>Delivery</span>
+                        <div class="d-flex mt-3">
+                            <i class="la la-map-marker"></i>
+                            <p class="ml-2">{{ $detailedProduct->user->city }}, {{ $detailedProduct->user->shop->address ?? $detailedProduct->user->address }}</p>
+                        </div>
+                        <hr class="hr_delevery">
+                        <span>Standard Delivery</span>
+                        <div class="d-flex mt-3">
+                            <i class="la la-truck"></i>
+                            <p class="ml-2">{{ $detailedProduct->est_shipping_days ? $detailedProduct->est_shipping_days - 3 : 5 }} To {{ $detailedProduct->est_shipping_days ?? 10}} Days</p>
+                        </div>
+{{--                        <hr class="hr_delevery">--}}
+                        <div class="d-flex mt-1">
+                            <i class="la la-money"></i>
+                            <p class="ml-2">Cash on Delivery {{$detailedProduct->cash_on_delivery ? "Available" : "Not Available"}}</p>
+                        </div>
+                        <hr class="hr_delevery">
+                        <span>Service</span>
+                        <div class="d-flex mt-1">
+                            <i class="la la-check-circle-o"></i>
+                            <p class="ml-2">100% Authentic</p>
+                        </div>
+                        <div class="d-flex mt-1">
+                            <i class="la la-mail-reply"></i>
+                            <p class="ml-2">{{$detailedProduct->refundable ? "Available" : "Not Available"}} Return Product</p>
+                        </div>
+                        <div class="d-flex mt-1">
+                            <i class="la la-shield"></i>
+                            <p class="ml-2">{{$detailedProduct->refundable ? "Available" : "Not Available"}} Warranty</p>
+                        </div>
+                        {{--                        <hr class="hr_delevery">--}}
+                        <div class="divider_row"></div>
+
+                        <div class="seller_divider">
+                            <div class="mt-3">
+                                Sold By
+                            </div>
+                            <h4 class="text-black-50">
+                                @if ($detailedProduct->added_by == 'seller' && \App\BusinessSetting::where('type', 'vendor_system_activation')->first()->value == 1)
+                                    <a class="text-black-50" href="{{ route('shop.visit', $detailedProduct->user->shop->slug) }}">{{ $detailedProduct->user->shop->name }}</a>
+                                @else
+                                    {{  translate('Inhouse product') }}
+                                @endif
+                            </h4>
+
+                            <div class="row">
+                                <div class="col h-70px">50%</div>
+                                <div class="col h-70px">100%</div>
+                                <div class="col h-70px">80%</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

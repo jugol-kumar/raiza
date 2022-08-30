@@ -4512,3 +4512,43 @@ input[type="radio"]:checked + .radio-box:after {
     padding: .75rem;
 }
 
+
+.bg_details_side{
+    padding-bottom: 0px !important;
+}
+.delevery_address_secotion p{
+    font-size: 15px;
+}
+.delevery_address_secotion i{
+    font-size: 21px;
+    margin-top: 3px;
+}
+.delevery_address_secotion .hr_delevery{
+    margin-top: 0;
+}
+.bg_details_side{
+    background: #f9f9f9ad;
+}
+.divider_row{
+    height: 10px;
+    margin-left: -16px;
+    width: 113%;
+    background: white;
+}
+.seller_divider .row .col{
+    height: 75px;
+    border: 1px solid #e9e9e98a;
+    border-right: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seller_divider .row {
+    font-weight: bold;
+    font-size: 25px;
+    color: #878787;
+}
+.seller_divider .row .col:first-child{
+    border-left: 0 !important;
+}

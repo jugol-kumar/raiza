@@ -6,7 +6,7 @@
             @if (Session::has('cart') && count(Session::get('cart')) > 0)
                 <div class="row mb-3">
                     <div class="col-xxl-10 col-xl-11 mx-auto">
-                        <h6 class="h6 bg-matt text-white rounded p-2 mb-0 fw-700">Cart Details</h6>
+                        <h6 class="h6 bg-matt rounded p-2 mb-0 fw-700">Cart Details</h6>
                         <div class="shadow-sm bg-white p-3 p-lg-4 rounded text-left">
                             <div class="mb-4">
                                 <div class="row gutters-5 d-none d-lg-flex border-bottom mb-3 pb-3">
@@ -122,7 +122,7 @@
                     @csrf
                     <div class="row cols-xs-space cols-sm-space cols-md-space">
                         <div class="col-xxl-10 col-xl-11 mx-auto">
-                            <h6 class="h6 bg-matt text-white rounded p-2 mb-0 fw-700">Shipping info</h6>
+                            <h6 class="h6 bg-matt  rounded p-2 mb-0 fw-700">Shipping info</h6>
                             @if (Auth::check())
                                 <div class="shadow-sm bg-white p-4 rounded mb-4">
                                     <div class="row gutters-5">
